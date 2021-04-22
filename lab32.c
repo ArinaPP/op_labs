@@ -1,5 +1,5 @@
-#include <stdio.h>
 #include <math.h>
+#include <stdio.h>
 int main()
 {
     float x, h, f;
@@ -14,13 +14,13 @@ int main()
     do
     {
         if ((x >= 0.0f) && (x <= 1.5f))
-            f = pow(2.0f , x) - 2.0f + x * x;
+            f = pow(2.0f, x) - 2.0f + x * x;
         else
             f = sqrt(x) * exp(x * x);
         x = i * h;
         i = i + 1;
         printf("%f %f\n", x, f);
-    }
-    while (i <= n);
+    } while (i <= n);
     return 0;
 }
+Л
