@@ -1,32 +1,32 @@
 #include <math.h>
 #include <stdio.h>
 
-//unsigned int gi(int x, int y, int f)
-//{
-  //  if (y = 0)
-    //    return f;
-  //  else
-
-//}
-
-unsigned int fi(int x, int y, int f)
+unsigned int fi(int x, int y)
 {
     int i;
-    if (y != 0)
+    int f = 1;
+    if (y)
         for (i = 1; i <= y; i++)
             f = f * x;
     return f;
 }
 
+unsigned int fr(int x, int y)
+{
+  if (y)
+    return y > 1? fr(x, y - 1) * x : x;
+  else
+    return 1;
+}
+
 int main()
 {
     int x, y;
-    int f = 1;
     printf("Введите число --> ");
     scanf("%d", &x);
     printf("Введите степень --> ");
     scanf("%d", &y);
-    printf("Cycle = %d\n", f);
-//    printf("Recursion = %d\n", gi);
+    printf("Cycle = %d\n", fi(x, y));
+    printf("Recursion = %d\n", fr(x, y));
     return 0;
 }
